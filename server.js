@@ -18,8 +18,13 @@ connectDB();
 const app = express();
 
 // --- CORS Configuration ---
-// Allow all origins (no restrictions)
-app.use(cors());
+// This allows your deployed frontend to communicate with your backend
+const frontendURL = 'https://eduvoult-f.onrender.com'; // Make sure this is your correct frontend URL
+const corsOptions = {
+  origin: [frontendURL, 'http://localhost:3000'], // Allow both live and local frontends
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 // --- End of Configuration ---
 
 // Middleware to parse JSON bodies
