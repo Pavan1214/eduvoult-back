@@ -18,15 +18,8 @@ connectDB();
 const app = express();
 
 // --- CORS Configuration ---
-const corsOptions = {
-  origin: [
-    'http://localhost:3000',            // Local React frontend
-    'https://eduvoult-f.vercel.app'     // Vercel frontend (deployed)
-  ],
-  credentials: true, // allow cookies/tokens if you use them
-  optionsSuccessStatus: 200
-};
-app.use(cors(corsOptions));
+// Allow all origins (no restrictions)
+app.use(cors());
 // --- End of Configuration ---
 
 // Middleware to parse JSON bodies
