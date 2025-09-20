@@ -18,10 +18,12 @@ connectDB();
 const app = express();
 
 // --- CORS Configuration ---
-// This allows your deployed frontend to communicate with your backend
-const frontendURL = 'https://eduvoult.onrender.com'; // Make sure this is your correct frontend URL
 const corsOptions = {
-  origin: [frontendURL, 'http://localhost:3000'], // Allow both live and local frontends
+  origin: [
+    'http://localhost:3000',          // Local React frontend
+    'https://eduvoult.vercel.app'     // Vercel frontend (your deployed frontend)
+  ],
+  credentials: true, // Needed if you use cookies, tokens, or sessions
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
