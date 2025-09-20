@@ -20,10 +20,10 @@ const app = express();
 // --- CORS Configuration ---
 const corsOptions = {
   origin: [
-    'http://localhost:3000',          // Local React frontend
-    'https://eduvoult.vercel.app'     // Vercel frontend (your deployed frontend)
+    'http://localhost:3000',            // Local React frontend
+    'https://eduvoult-f.vercel.app'     // Vercel frontend (deployed)
   ],
-  credentials: true, // Needed if you use cookies, tokens, or sessions
+  credentials: true, // allow cookies/tokens if you use them
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
